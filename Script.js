@@ -1,58 +1,40 @@
 let selectedFood, selectedDrink, selectedDessert;
-const foodList = document.querySelectorAll(".food");
-const drinkList = document.querySelectorAll(".drink");
-const dessertList = document.querySelectorAll(".dessert");
 const button = document.querySelector("button");
 
 
-function setFood(item) {
-    for (let i = 0; i < foodList.length; i++)
+function setItem(item) {
+    let selectedItem;
+
+    if (item.classList.contains("food"))
     {
-        if (foodList[i] === item)
-        {
-            foodList[i].classList.add("selected");
-            selectedFood = i;
-        }
-        else
-        {
-            foodList[i].classList.remove("selected");
-        }
+        selectedItem = document.querySelector(".food-container .selected");
+        selectedFood = item;
     }
-    setButton();
-}
-function setDrink(item) {
-    for (let i = 0; i < drinkList.length; i++)
+    else if (item.classList.contains("drink"))
     {
-        if (drinkList[i] === item)
-        {
-            drinkList[i].classList.add("selected");
-            selectedDrink = i;
-        }
-        else
-        {
-            drinkList[i].classList.remove("selected");
-        }
+        selectedItem = document.querySelector(".drink-container .selected");
+        selectedDrink = item;
     }
-    setButton();
-}
-function setDessert(item) {
-    for (let i = 0; i < dessertList.length; i++)
+    else
     {
-        if (dessertList[i] === item)
-        {
-            dessertList[i].classList.add("selected");
-            selectedDessert = i;
-        }
-        else
-        {
-            dessertList[i].classList.remove("selected");
-        }
+        selectedItem = document.querySelector(".dessert-container .selected");
+        selectedDessert = item;
     }
+
+
+    if (selectedItem != null)
+    {
+        selectedItem.classList.remove("selected");
+    }
+
+    item.classList.add("selected");
+
     setButton();
 }
 
+
 function setButton() {
-    if (!isNaN(selectedDessert && selectedDrink && selectedFood))
+    if (document.querySelectorAll(".selected").length == 3)
     {
         button.classList.add("finished");
         button.innerHTML = "Fechar pedido";
@@ -61,14 +43,14 @@ function setButton() {
 }
 
 function finishOrder() {
-    let foodName = foodList[selectedFood].querySelector(".item-name").innerHTML;
-    let foodPrice = Number(foodList[selectedFood].querySelector(".value").innerHTML.replace(',', '.'));
+    let foodName = selectedFood.querySelector(".item-name").innerHTML;
+    let foodPrice = Number(selectedFood.querySelector(".value").innerHTML.replace(',', '.'));
 
-    let drinkName = drinkList[selectedDrink].querySelector(".item-name").innerHTML;
-    let drinkPrice = Number(drinkList[selectedDrink].querySelector(".value").innerHTML.replace(',', '.'));
+    let drinkName = selectedDrink.querySelector(".item-name").innerHTML;
+    let drinkPrice = Number(selectedDrink.querySelector(".value").innerHTML.replace(',', '.'));
 
-    let dessertName = dessertList[selectedDessert].querySelector(".item-name").innerHTML;
-    let dessertPrice = Number(dessertList[selectedDessert].querySelector(".value").innerHTML.replace(',', '.'));
+    let dessertName = selectedDessert.querySelector(".item-name").innerHTML;
+    let dessertPrice = Number(selectedDessert.querySelector(".value").innerHTML.replace(',', '.'));
 
     let totalPrice = (foodPrice + drinkPrice + dessertPrice).toFixed(2);
 
