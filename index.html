@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Reset.css">
     <link rel="stylesheet" href="./Style.css">
+
     <title>Driven Eats</title>
 </head>
 <body>
@@ -17,78 +18,89 @@
         <div class="food-container">
             <h2>Primeiro, seu prato</h2>
             <div class="itens-container">
-                <div class="item">
+                <div class="item food" onclick="setFood(this)">
                     <img src="./Images/frango_yin_yang 3.png" alt="" srcset="">
                     <p class="item-name">Frango Yin Yang</p>
                     <p class="item-description">Um pouco de batata, um pouco de salada</p>
-                    <p class="item-price">R$ 14,90</p>
+                    <p class="item-price">R$ <span class="value">14,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="item">
+                <div class="item food" onclick="setFood(this)">
                     <img src="./Images/frango_yin_yang 3.png" alt="" srcset="">
                     <p class="item-name">Frango Yin Yang</p>
                     <p class="item-description">Um pouco de batata, um pouco de salada</p>
-                    <p class="item-price">R$ 14,90</p>
+                    <p class="item-price">R$ <span class="value">14,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="item">
+                <div class="item food" onclick="setFood(this)">
                     <img src="./Images/frango_yin_yang 3.png" alt="" srcset="">
                     <p class="item-name">Frango Yin Yang</p>
                     <p class="item-description">Um pouco de batata, um pouco de salada</p>
-                    <p class="item-price">R$ 14,90</p>
+                    <p class="item-price">R$ <span class="value">14,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
             </div>
         </div>
         <div class="drink-container">
             <h2>Agora, sua bebida</h2>
             <div class="itens-container">
-                <div class="item">
+                <div class="item drink" onclick="setDrink(this)">
                     <img src="./Images/coquinha_gelada 1.png" alt="" srcset="">
                     <p class="item-name">Coquinha gelada</p>
                     <p class="item-description">Lata 350ml</p>
-                    <p class="item-price">R$ 4,90</p>
+                    <p class="item-price">R$ <span class="value">4,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="item">
+                <div class="item drink" onclick="setDrink(this)">
                     <img src="./Images/coquinha_gelada 1.png" alt="" srcset="">
                     <p class="item-name">Coquinha gelada</p>
                     <p class="item-description">Lata 350ml</p>
-                    <p class="item-price">R$ 4,90</p>
+                    <p class="item-price">R$ <span class="value">4,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="item">
+                <div class="item drink" onclick="setDrink(this)">
                     <img src="./Images/coquinha_gelada 1.png" alt="" srcset="">
                     <p class="item-name">Coquinha gelada</p>
                     <p class="item-description">Lata 350ml</p>
-                    <p class="item-price">R$ 4,90</p>
+                    <p class="item-price">R$ <span class="value">4,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
             </div>
         </div>
         <div class="dessert-container">
             <h2>Por fim, sua sobremesa</h2>
             <div class="itens-container">
-                <div class="item">
+                <div class="item dessert" onclick="setDessert(this)">
                     <img src="./Images/pudim 1.png" alt="" srcset="">
                     <p class="item-name">Pudim</p>
                     <p class="item-description">Apenas pudim</p>
-                    <p class="item-price">R$ 7,90</p>
+                    <p class="item-price">R$ <span class="value">7,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="item">
+                <div class="item dessert" onclick="setDessert(this)">
                     <img src="./Images/pudim 1.png" alt="" srcset="">
                     <p class="item-name">Pudim</p>
                     <p class="item-description">Apenas pudim</p>
-                    <p class="item-price">R$ 7,90</p>
+                    <p class="item-price">R$ <span class="value">7,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div class="item">
+                <div class="item dessert" onclick="setDessert(this)">
                     <img src="./Images/pudim 1.png" alt="" srcset="">
                     <p class="item-name">Pudim</p>
                     <p class="item-description">Apenas pudim</p>
-                    <p class="item-price">R$ 7,90</p>
+                    <p class="item-price">R$ <span class="value">7,90</span></p>
+                    <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer">
         <button>
-            <p>Selecione os 3 itens para fechar o pedido</p>
+            Selecione os 3 itens para fechar o pedido
         </button>
     </div>
     <script src="./Script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
