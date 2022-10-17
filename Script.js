@@ -60,8 +60,7 @@ function finishOrder() {
 - Sobremesa: ${dessertName}
 Total: R$ ${totalPrice}`);
 
-    let url = "http://wa.me/554799043538?text=" + message;
-    //console.log(message);
+    let url = "http://wa.me/554796924639?text=" + message;
 
 
     window.open(url, '_brank');
